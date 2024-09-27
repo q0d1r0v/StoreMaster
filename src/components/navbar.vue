@@ -85,9 +85,6 @@ const stopResize = () => {
 };
 
 onMounted(() => {
-  const resizer = document.querySelector(".resizer");
-  resizer.addEventListener("mousedown", initResize);
-
   document.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.key === "k") {
       e.preventDefault();
@@ -246,10 +243,6 @@ watch(isModalOpen, (newValue) => {
           <Icon icon="ri-arrow-left-s-line" v-if="!isMini" class="text-lg" />
         </button>
       </div>
-      <div
-        class="resizer w-2 bg-gray-300"
-        style="height: 100%; position: absolute; right: 0; top: 0"
-      ></div>
     </aside>
 
     <main class="flex-1 flex flex-col">
