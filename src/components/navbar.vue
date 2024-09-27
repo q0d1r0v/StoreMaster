@@ -247,13 +247,15 @@ watch(isModalOpen, (newValue) => {
         </button>
       </div>
       <div
-        class="resizer cursor-ew-resize w-2 bg-gray-300"
+        class="resizer w-2 bg-gray-300"
         style="height: 100%; position: absolute; right: 0; top: 0"
       ></div>
     </aside>
 
     <main class="flex-1 flex flex-col">
-      <header class="flex justify-between items-center mb-0 bg-white p-4">
+      <header
+        class="flex justify-between items-center mb-0 bg-white p-2 border-b"
+      >
         <h1 class="text-xl text-gray-800">{{ $route.name }}</h1>
         <div class="flex items-center justify-center gap-4">
           <el-popover
@@ -291,6 +293,7 @@ watch(isModalOpen, (newValue) => {
     <div
       v-if="isModalOpen"
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+      @keyup.esc="closeModal"
     >
       <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
         <h2 class="text-lg font-semibold mb-4">Qidiruv</h2>
